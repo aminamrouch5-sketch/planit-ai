@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PLANIT AI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+ <header class="bg-white border-b p-4 flex flex-col gap-3 md:flex-row md:justify-between md:items-center">
+    <div class="text-xl font-bold">
+      PLANIT <span class="text-indigo-600">AI</span>
+    </div>
+
+    <nav class="flex gap-2 text-sm">
+      <a href="./index.html" class="text-gray-600 px-3 py-2 rounded">
+        Dashboard
+      </a>
+      <a href="./newproject.html" class="bg-indigo-100 text-indigo-600 px-3 py-2 rounded font-semibold">
+        Nouveau projet
+      </a>
+    </nav>
+
+    <button class="w-fit border px-3 py-2 rounded text-sm font-semibold">
+      ✧ Paramètres IA
+    </button>
+  </header>
+
+
+  <!-- MAIN -->
+  <main class="p-4 max-w-4xl mx-auto flex flex-col gap-6">
+
+    <!-- Badge -->
+    <div>
+      <span class="bg-indigo-100 text-indigo-600 text-xs font-bold px-3 py-1 rounded-full">
+        ● MAQUETTE INTERACTIVE
+      </span>
+      <p class="text-xs text-gray-500 mt-2">
+        Les actions illustrent les états de l’interface ; aucune donnée n’est enregistrée.
+      </p>
+    </div>
+
+    <!-- Title -->
+    <div>
+      <p class="text-xs font-bold text-gray-500">NOUVEAU PROJET / BRIEF</p>
+      <h1 class="text-2xl font-bold mt-1">D’une idée à un plan clair.</h1>
+      <p class="text-sm text-gray-500 mt-1">
+        Définissez le cadre de votre projet pour prévisualiser la génération.
+      </p>
+    </div>
+
+    <!-- Form Box -->
+    <form class="bg-white border rounded p-4">
+      <h2 class="text-lg font-bold mb-4">Informations du projet</h2>
+
+      <div class="mb-4">
+        <label class="block text-sm font-bold mb-1">Nom du projet *</label>
+        <input type="text" value="Refonte plateforme e-commerce" class="w-full border rounded p-2 text-sm" />
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-bold mb-1">Description *</label>
+        <input type="text" value="Modernisation du parcours d'achat et de l'espace client." class="w-full border rounded p-2 text-sm" />
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-bold mb-1">Brief complet *</label>
+        <textarea rows="3" class="w-full border rounded p-2 text-sm">Repenser la navigation, le catalogue et le paiement ; intégrer des tests utilisateurs et une optimisation mobile.</textarea>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-bold mb-1">Durée (jours) *</label>
+        <input type="number" value="30" class="w-full border rounded p-2 text-sm" />
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-bold mb-1">Nombre de développeurs *</label>
+        <input type="number" value="3" class="w-full border rounded p-2 text-sm" />
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-bold mb-1">Technologies *</label>
+        <input type="text" value="React, Node.js, PostgreSQL" class="w-full border rounded p-2 text-sm" />
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-bold mb-1">Difficulté</label>
+        <select class="w-full border rounded p-2 text-sm bg-white">
+          <option selected>Intermediate</option>
+          <option>Beginner</option>
+          <option>Advanced</option>
+        </select>
+      </div>
+
+      <hr class="mb-4" />
+
+      <div class="text-center">
+        <button type="button" class="w-full bg-indigo-600 text-white font-bold py-3 rounded text-sm shadow-xl">
+          ✧ Générer le plan de développement
+        </button>
+        <p class="text-xs text-gray-500 mt-2">
+          Prévisualisation simulée : aucun plan n'est généré ni sauvegardé.
+        </p>
+      </div>
+    </form>
+
+    <!-- BOTTOM CONTAINER FOR THE 2 CARDS -->
+    <div class="flex flex-col md:flex-row gap-4">
+
+      <!-- Status Box -->
+      <div class="w-full bg-white border rounded p-4">
+        <p class="text-xs font-bold text-gray-400 mb-2">APERÇU DE LA GÉNÉRATION</p>
+        <h2 class="text-lg font-bold mb-2">États du processus</h2>
+        <span class="inline-block bg-indigo-100 text-indigo-600 text-xs font-bold px-3 py-1 rounded-full mb-2">
+          01 / PRÊT
+        </span>
+        <p class="text-xs text-gray-500">
+          Votre brief est prêt. Lancez la prévisualisation du plan.
+        </p>
+      </div>
+
+      <!-- Variants Box -->
+      <div class="w-full bg-white border rounded p-4">
+        <p class="text-xs font-bold text-gray-400 mb-2">VARIANTES D'INTERFACE</p>
+        <p class="text-xs text-gray-500 mb-3">
+          Explorez également les états de succès et d'erreur de cette maquette.
+        </p>
+        <div class="flex gap-2">
+          <button type="button" class="bg-gray-100 px-4 py-2 rounded text-sm font-bold">Prêt</button>
+          <button type="button" class="bg-gray-100 px-4 py-2 rounded text-sm font-bold">Succès</button>
+          <button type="button" class="bg-gray-100 px-4 py-2 rounded text-sm font-bold">Erreur</button>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+</body>
+</html>
