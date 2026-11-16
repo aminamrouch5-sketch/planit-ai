@@ -1,5 +1,5 @@
+
 const url = "./sample-plan.json";
-let mytasks = []
 async function getdata(url) {
   try {
     const response = await fetch(url);
@@ -12,6 +12,6 @@ async function getdata(url) {
     console.error(e);
   }
 }
-const tasks = await getdata(url)
+const demoTask = await getdata(url)
 
-export{tasks}
+export{demoTask}
