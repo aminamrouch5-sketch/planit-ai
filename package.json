@@ -1,0 +1,19 @@
+{
+  "name": "ai-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "demo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aminamrouch5-sketch/planit-ai.git"
+  },
+  "keywords": [],
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/aminamrouch5-sketch/planit-ai/issues"
+  },
+  "homepage": "https://github.com/aminamrouch5-sketch/planit-ai#readme"
+}
