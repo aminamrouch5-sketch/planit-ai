@@ -87,7 +87,7 @@ demoButton.addEventListener('click',(e)=>{
           <button class="w-full bg-indigo-600 text-white text-sm font-semibold py-2 px-4 rounded shadow-xl">
             Ouvrir le tableau des tâches →
           </button>
-          <button class="bg-red-100 text-red-600 px-3 py-2 rounded font-bold shadow-xl">
+          <button class="bg-red-100 text-red-600 px-3 py-2 rounded font-bold shadow-xl delete">
             ✕
           </button>
         </div>
@@ -161,28 +161,45 @@ cardContainer.addEventListener('click',(e)=>{
   let butt = e.target.closest('button')
   if(!butt) return
   if(butt.classList.contains('delete')){
-    const demoAlert = document.createElement('div')
-    demoAlert.classList.add("opacity-100","visible","transition-all","duration-500","ease-in-out")
-    demoAlert.innerHTML = `
-    <div class=" w-[40%] fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white border rounded-lg p-5 flex flex-col gap-4 ">
+    const notAlert = document.createElement('div')
+    notAlert.classList.add("opacity-100","visible","transition-all","duration-500","ease-in-out","shadow-x1")
+    notAlert.innerHTML = `
+    <div class=" w-[40%] fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white border rounded-lg p-5 flex flex-col gap-4  ">
         <div class="md:flex flex-row uppercase justify-center ">
           <span class="bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">
             ATTENTION
           </span>
           <p class="text-xs font-bold text-red-500 px-2 py-1 "> tu as sure pour suppremier ce project</p>
         </div>
-        <div>
-          <button id="yes"> OUI </button>
-          <button id="no"> NON </button>
+        <div class = "w-full flex justify-between">
+          <button id="yes" class="bg-red-500 w-[20%] rounded text-white font-semibold shadow-x4"> OUI </button>
+          <button id="no" class="bg-green-500 w-[20%] rounded text-white font-semibold shadow-x4"> NON </button>
         </div>
     </div>`
-    body.appendChild(demoAlert)
-    demoAlert.addEventListener('click',(e)=>{
-      
-      demoAlert.classList.remove("visible","opacity-100")
-      demoAlert.classList.add("invisible","opacity-0")
-      setTimeout(()=>{demoAlert.remove()},3000)
-    })
+    body.appendChild(notAlert)
+    notAlert.addEventListener('click',(notEvent)=>{
+      notEvent.preventDefault()
+      let but = notEvent.target.closest('button')
+      if(!but) return
+      if(but.getAttribute('id')=="yes"){
+        e.target.closest("div").parentElement.parentElement.remove()
+        isSelected = false
+        notAlert.classList.remove("visible","opacity-100")
+        notAlert.classList.add("invisible","opacity-0")
+        setTimeout(()=>{
+                      notAlert.remove()
+                    },
+                      3000)
+      }
+      else if(but.getAttribute('id')=="no"){
+        notAlert.classList.remove("visible","opacity-100")
+        notAlert.classList.add("invisible","opacity-0")
+        setTimeout(()=>{
+                      notAlert.remove()
+                    },
+                      3000)
+        }
+  })
     return
   }
 
